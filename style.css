@@ -70,9 +70,8 @@ section{
     background-size: cover;
     background-position:center ;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap:4rem ;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
 }
 .img{
@@ -128,9 +127,8 @@ header.sticky{
     box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
 }
 .items{
-    display: grid;
-    grid-template-columns: repeat(5,minmax(220px, auto));
-    grid-gap: 2rem;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
 }
@@ -160,6 +158,11 @@ header.sticky{
 .portfolio{
     width: auto;
     height: 100vh;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 .heading{
  text-align: center;
@@ -175,47 +178,43 @@ header.sticky{
     font-size: 20px;
     font-weight: 500;
 }
-.portfolio{
-    background-color: #f2f2f2;
-}
 .portfolio-content{
-    display: grid;
-    grid-template-columns: repeat(3,minmax(350px,auto));
-    grid-gap: 5rem;
+    display: flex;
     align-items: center;
+    justify-content: space-around;
     margin-top: 5rem;
     text-align: left;
-
+    width: 100%;
+    overflow: hidden;
 }
 .card-container{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
 }
-.card{
+
+.cards{
+    margin: 50px;
     background-color: white;
     border-radius: 20px;
     padding: 10px;
     padding-left: 0;
     padding-right: 0;
     box-shadow: 0px 2px 18px #26395354;
- 
+    max-width: 350px;
+    position: relative;
+
+    transition: ease-in .2s
 }
-.media-card{
-    background: url("./components/Jogo_da_forca.png")center/cover;
+
+.media-card {
     height: 300px;
-    width: 100%;
+    width: 350px;
+
 }
-.media-card2{
-    background: url("./components/Controle_Financeiro\ -\ Copia.png")center/cover;
-    height: 300px;
-    width: 100%;
-}
-.media-card3{
-    background: url("./components/Calculadora.png")center/cover;
-    height: 300px;
-    width: 100%;
-}
+
 .top-card{
     padding: 15px;
     padding-top:0 ;
@@ -230,8 +229,7 @@ header.sticky{
 .buttons{
     padding: 20px;
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: flex-end;
 }
 .buttons a{
     text-decoration: none;
@@ -242,9 +240,37 @@ header.sticky{
     border: none;
     font-size: 15px;
     font-weight: bold;
+    margin-right: 15px;
 }
 .buttons a:hover{
     transform: scale(1.1);
     background-color: var(--main-color);
     transition: 0.5;
 }
+.botoes{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+}
+.btn{
+    background-color:rgb(128,103,240,1); 
+    color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+
+
+}
+.btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: var(--main-color);
+    transition: 0.5;
+}
+
+
