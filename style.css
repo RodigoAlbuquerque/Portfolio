@@ -17,6 +17,7 @@
 body{
     background-color: var(--bg-color);
     color: var(--text-color);
+    display: grid;
 }
 header{
     position: fixed;
@@ -260,7 +261,7 @@ header.sticky{
     border: 1px solid rgba(0, 0, 0, 0.068);
     width: 50px;
     height: 50px;
-    margin-top:2rem;
+    margin-top:1rem;
     border-radius: 50%;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -275,3 +276,40 @@ header.sticky{
 }
 
 
+@media (max-width:770px){
+    .portfolio-content{
+        overflow:visible;
+        margin-top: 1rem;
+    }
+}
+
+@media  (max-width:550px){
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    .home-text{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .home-text > h1{
+        font-size: var(--h2-font);
+    }
+    .sub-img img{
+        width: 35px;
+    }
+    .sub-box > h3{
+        font-size: 20px;
+    }
+    .portfolio{
+        height: 100vh;
+    }
+    .portfolio-content{
+        overflow: hidden;
+        margin-top: 0rem;
+    }
+}
