@@ -276,14 +276,8 @@ header.sticky{
 }
 
 
-@media (max-width:770px){
-    .portfolio-content{
-        overflow:visible;
-        margin-top: 1rem;
-    }
-}
 
-@media  (max-width:550px){
+@media  (max-width:960px){
     .home{
         display: flex;
         flex-direction: column;
