@@ -18,6 +18,7 @@ body{
     background-color: var(--bg-color);
     color: var(--text-color);
     display: grid;
+    
 }
 header{
     position: fixed;
@@ -132,6 +133,7 @@ header.sticky{
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    width: 60vw;
 }
 .sub-box{
     padding: 45px 45px 45px 45px;
@@ -158,7 +160,7 @@ header.sticky{
 }
 .portfolio{
     width: auto;
-    height: 100vh;
+    height: auto;
     background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
@@ -183,9 +185,10 @@ header.sticky{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 5rem;
+    margin-top: 1rem;
     text-align: left;
     width: 100%;
+    height: auto;
     overflow: hidden;
 }
 .card-container{
@@ -193,9 +196,7 @@ header.sticky{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
-
 .cards{
     margin: 50px;
     background-color: white;
@@ -206,7 +207,6 @@ header.sticky{
     box-shadow: 0px 2px 18px #26395354;
     max-width: 350px;
     position: relative;
-
     transition: ease-in .2s
 }
 
@@ -293,6 +293,15 @@ header.sticky{
     .home-text > h1{
         font-size: var(--h2-font);
     }
+    .home-text > h5{
+        font-size: 1.5rem;
+    }
+    .home-text > h3{
+        font-size: 1rem;
+    }
+    .home-text > p{
+        font-size: 1rem;
+    }
     .sub-img img{
         width: 35px;
     }
@@ -300,10 +309,91 @@ header.sticky{
         font-size: 20px;
     }
     .portfolio{
-        height: 100vh;
+        max-width: 110vw;
+        height: 140vh;
+    }
+    .portfolio-content{
+        margin-top: 0rem;
+        overflow:hidden;
+    }
+}
+@media (max-width:790px){
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    .home-text{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .home-text > h1{
+        font-size: var(--h2-font);
+    }
+    .items{
+        display: flex;
+        flex-direction: column;
+    }
+    .portfolio{
+        height: 140vh;
     }
     .portfolio-content{
         overflow: hidden;
         margin-top: 0rem;
+    }
+}
+@media (max-width:510px){
+    header{
+        display:flex;
+        justify-content: center;
+    }
+    .icon{
+        display: none;
+    }
+    .home{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .home-text{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .home-text > h1{
+        font-size: var(--h2-font);
+    }
+    .skills{
+        display:flex;
+        align-items: center;
+    }
+    .items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .items >.sub-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .portfolio{
+        height: 140vh;
+    }
+    .portfolio-content{
+        width: 350px;
+        overflow: hidden;
+        margin-top: 0rem;
+        transform:scale(0.8)
     }
 }

@@ -1,4 +1,3 @@
-
 // DEIXANDO O HEADER PRESO NA TELA
 const header = document.querySelector("header")
 
@@ -9,11 +8,11 @@ window.addEventListener("scroll",function(){
 // GERANDO OR PROJETOS NO HTML VIA JAVASCRIPT
 
 const projetos = [
-    {'title':'Calculadora', 'url':"./components/Calculadora.png", 'id':'1','code':'"https://github.com/RodigoAlbuquerque/Calculadora"', 'cardPos':'card-left'},
-    {'title':'Jogo da Forca','url':"./components/Jogo_da_forca.png", 'id':'2', 'code':'"https://github.com/RodigoAlbuquerque/jogoDaForca"','cardPos':'card-center'},
-    {'title':'Controle Financeiro','url':"./components/Controle_Financeiro.png", 'id':'3', 'code':'"https://github.com/RodigoAlbuquerque/Controle_Financeiro"','cardPos':'card-right'},
+    {'title':'Calculadora', 'live':"https://rodigoalbuquerque.github.io/Calculadora/calculadora.html", 'url':"./components/Calculadora.png", 'id':'1','code':'"https://github.com/RodigoAlbuquerque/Calculadora"', 'cardPos':'card-left'},
+    {'title':'Jogo da Forca','live':"https://rodigoalbuquerque.github.io/jogoDaForca/",'url':"./components/Jogo_da_forca.png", 'id':'2', 'code':'"https://github.com/RodigoAlbuquerque/jogoDaForca"','cardPos':'card-center'},
+    {'title':'Controle Financeiro','live':"https://rodigoalbuquerque.github.io/Controle_Financeiro/App/index.html",'url':"./components/Controle_Financeiro.png", 'id':'3', 'code':'"https://github.com/RodigoAlbuquerque/Controle_Financeiro"','cardPos':'card-right'},
 ]
-function criarProjetos(titulo, url, id, code,cardPos){
+function criarProjetos(titulo, url, id,live, code,cardPos){
     const container = document.querySelector(".portfolio-content")
 
     const card = document.createElement("div")
@@ -29,7 +28,7 @@ function criarProjetos(titulo, url, id, code,cardPos){
         <hr>
         <div class="buttons">
             <a href=${code} target="_blank">Ver Código</a>
-            <a href="">Ao Vivo</a>
+            <a href=${live} target="_blank">Ao Vivo</a>
         </div>
     `
   
@@ -38,7 +37,7 @@ function criarProjetos(titulo, url, id, code,cardPos){
 
 const loadProjetos = () => {
     projetos.forEach ((item) => {
-        criarProjetos(item.title,item.url,item.id,item.code, item.cardPos)
+        criarProjetos(item.title,item.url,item.id,item.live,item.code, item.cardPos)
     })
 }
 
@@ -70,16 +69,16 @@ const attPos = () =>{
 }
 
 const passarProjetos = (event) =>{
-    maxRight = (qntProjetos - 1) * 484
-    maxLeft = (qntProjetos - 1) * - 484
-    if(px == maxLeft - 484){
+    maxRight = (qntProjetos - 1) * 450
+    maxLeft = (qntProjetos - 1) * - 450
+    if(px == maxLeft - 450){
         px = maxRight
-    }else if (px == maxRight + 484 ){
+    }else if (px == maxRight + 450 ){
         px = maxLeft
     }else if(event.target.id == 'btn-left'){
-        px+=484
+        px+=450
     }else if (event.target.id =="btn-right"){
-        px-=484
+        px-=450
     }
     attPos()
 }
