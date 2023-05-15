@@ -4,104 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Portfólio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,500;0,700;1,800&family=Poppins:ital,wght@1,300&family=Raleway:wght@200&family=Rowdies:wght@300&display=swap');
     </style>
+    <title>Document</title>
 </head>
 <body>
-    <!--HEADER-->
-    
+     <ul class="navlist2" id="navegacao">
+        <li type="none"><a class='link' href="#home">Home</a></li>
+        <li type="none"><a class='link' href="#skills">Tecnologias</a></li>
+        <li type="none"><a class='link' href="#projects">Projetos</a></li>
+    </ul>
     <header>
-        <div class="icon">
-           <p > <i  class="bx bx-server"></i> </p>
+        <div>
+            <p class="icon"> <i  class="bx bx-server"></i></p>
         </div>
         <ul class="navlist">
             <li type="none"><a href="#home">Home</a></li>
             <li type="none"><a href="#skills">Tecnologias</a></li>
-            <li type="none"><a href="#portfolio">Projetos</a></li>
+            <li type="none"><a href="#projects">Projetos</a></li>
         </ul>
+        <div class="menu">
+            <img src="components/R.png" id="menu" class="closed" alt="Menu">
+        </div>
+      
     </header>
-
-    <!--HOME-->
-
+   
     <section class="home" id="home">
-        <div class="home-text">
-            <h3 >Olá, eu sou</h3>
+        <div class="intro">
+            <h3>Olá, eu sou</h3>
             <h1>Rodrigo Albuquerque</h1>
-            <h5>Um programador Frontend, atualmente, cursando ciências da computação.</h5>
-            <div class="social">
+            <p>
+                Um programador FrontEnd, atualmente cursando um bacharelado em ciências da computação.
+                Além disso, sou técnico em redes de computadores e fluente em inglês.
+            </p>
+            <div class="contato">
                 <a href=""><i class="bx bxl-linkedin"></i></a>
                 <a href="https://github.com/RodigoAlbuquerque?tab=repositories" target="_blank"><i class="bx bxl-github"></i></a>
             </div>
         </div>
-        <div class="img">
-            <img class="img" src="./components/PersAnimat.jpeg" alt="Imagem em forma de cartoon do dono do Portfólio">
-        </div>
+        <img src="components/PersAnimat.jpeg" alt="">
     </section>
-    
-    <!--SKILLS-->
 
     <section class="skills" id="skills">
-        <div class="items">
-            <div class="sub-box">
-                <div class="sub-img">
-                    <img src="components/HTMl.png" alt="">
-                </div>
-                <h3>HTML5</h3>
-            </div>
-       
-            <div class="sub-box">
-                <div class="sub-img">
-                    <img src="components/css3-logo-png-transparent.png" alt="">
-                </div>
-                <h3>CSS3</h3>
-            </div>
-       
-        
-            <div class="sub-box">
-                <div class="sub-img">
-                    <img src="components/JS.jpg" alt="">
-                </div>
-                <h3>JavaScript</h3>
-            </div>
-     
-    
-            <div class="sub-box">
-                <div class="sub-img">
-                    <img src="components/react.png" alt="">
-                </div>
-                <h3>React JS</h3>
-            </div>
-     
-       
-            <div class="sub-box">
-                <div class="sub-img">
-                    <img src="components/MySQL.jpg" alt="">
-                </div>
-                <h3>MySQL</h3>
-            </div>
+        <div class="skillContainer">
+            <img  src="components/HTMl.png " alt="">
+            <p>HTML5</p>
+        </div>
+        <div class="skillContainer">
+            <img  src="components/css3-logo-png-transparent.png" alt="">   
+            <p>CSS3</p>
+        </div>
+        <div class="skillContainer">
+            <img  src="components/JS.jpg" alt="">             
+            <p>JavaScript</p>
+        </div>
+        <div class="skillContainer">
+            <img src="components/react.png" alt="">   
+            <p>React JS</p>
+        </div>
+        <div class="skillContainer">
+            <img src="components/MySQL.jpg" alt="">
+            <p>MySQL</p>
         </div>
     </section>
 
-    <!--PORTFÓLIO-->
+    <section class="projetos" id="projects">
 
-    <section class="portfolio" id="portfolio">
         <div class="heading">
-            <h3>Portfolio</h3>
+            <h3>Portfólio</h3>
             <h2>Meus projetos</h2>
         </div>
-        <div class="portfolio-content"></div>
+
+        <div class="portfolio-content">
+            
+        </div>
+
         <div class="botoes">
             <button class="btn" id="btn-left">&laquo;</button>
             <button class="btn" id="btn-right">&raquo;</button>
         </div>
+
     </section>
-  
-  
-      <script type='text/javascript'src="portfolio.js"></script>
+    <script src="portfolio.js"></script>
 </body>
 </html>
