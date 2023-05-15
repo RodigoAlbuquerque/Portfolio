@@ -12,7 +12,7 @@ const projetos = [
     {'title':'Jogo da Forca','live':"https://rodigoalbuquerque.github.io/jogoDaForca/",'url':"./components/Jogo_da_forca.png", 'id':'2', 'code':'"https://github.com/RodigoAlbuquerque/jogoDaForca"','cardPos':'card-center'},
     {'title':'Controle Financeiro','live':"https://rodigoalbuquerque.github.io/Controle_Financeiro/App/index.html",'url':"./components/Controle_Financeiro.png", 'id':'3', 'code':'"https://github.com/RodigoAlbuquerque/Controle_Financeiro"','cardPos':'card-right'},
 ]
-function criarProjetos(titulo, url, id,live, code,cardPos){
+function criarProjetos(titulo, url, id, code,cardPos){
     const container = document.querySelector(".portfolio-content")
 
     const card = document.createElement("div")
@@ -28,7 +28,7 @@ function criarProjetos(titulo, url, id,live, code,cardPos){
         <hr>
         <div class="buttons">
             <a href=${code} target="_blank">Ver Código</a>
-            <a href=${live} target="_blank">Ao Vivo</a>
+            <a href="${url}">Ao Vivo</a>
         </div>
     `
   
@@ -37,7 +37,7 @@ function criarProjetos(titulo, url, id,live, code,cardPos){
 
 const loadProjetos = () => {
     projetos.forEach ((item) => {
-        criarProjetos(item.title,item.url,item.id,item.live,item.code, item.cardPos)
+        criarProjetos(item.title,item.url,item.id,item.code, item.cardPos)
     })
 }
 
@@ -69,18 +69,52 @@ const attPos = () =>{
 }
 
 const passarProjetos = (event) =>{
-    maxRight = (qntProjetos - 1) * 450
-    maxLeft = (qntProjetos - 1) * - 450
-    if(px == maxLeft - 450){
-        px = maxRight
-    }else if (px == maxRight + 450 ){
-        px = maxLeft
-    }else if(event.target.id == 'btn-left'){
-        px+=450
-    }else if (event.target.id =="btn-right"){
-        px-=450
+    if(window.screen.availwidth >= 575){ 
+        maxRight = (qntProjetos - 1) * 484
+        maxLeft = (qntProjetos - 1) * - 484
+        if(px == maxLeft - 484){
+            px = maxRight
+        }else if (px == maxRight + 484 ){
+            px = maxLeft
+        }else if(event.target.id == 'btn-left'){
+            px+=484
+        }else if (event.target.id =="btn-right"){
+            px-=484
+        }
+        attPos()
+    }else{
+        maxRight = (qntProjetos - 1) * 384
+        maxLeft = (qntProjetos - 1) * - 384
+        if(px == maxLeft - 384){
+            px = maxRight
+        }else if (px == maxRight + 384 ){
+            px = maxLeft
+        }else if(event.target.id == 'btn-left'){
+            px+=384
+        }else if (event.target.id =="btn-right"){
+            px-=384
+        }
+        attPos()
     }
-    attPos()
 }
 next.addEventListener("click",passarProjetos)
 prev.addEventListener("click",passarProjetos)
+
+const menu = document.getElementById('menu')
+const navegacao = document.getElementById('navegacao')
+const links = document.querySelectorAll('.link')
+
+const toggleMenu = () => {
+    if(menu.classList.contains('closed')){    
+        menu.src = 'components/burger.png'
+        menu.setAttribute('class','open')
+        navegacao.style.display='flex'
+        
+    }else if (menu.classList.contains('open')){
+        menu.src ='components/R.png'
+        menu.setAttribute('class','closed')
+        navegacao.style.display='none'
+    }
+}
+links.forEach( (link) => link.addEventListener('click',toggleMenu))
+menu.addEventListener('click',toggleMenu)
