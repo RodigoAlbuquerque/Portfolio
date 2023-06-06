@@ -12,7 +12,7 @@ const projetos = [
     {'title':'Jogo da Forca','live':"https://rodigoalbuquerque.github.io/jogoDaForca/",'url':"./components/Jogo_da_forca.png", 'id':'2', 'code':'"https://github.com/RodigoAlbuquerque/jogoDaForca"','cardPos':'card-center'},
     {'title':'Controle Financeiro','live':"https://rodigoalbuquerque.github.io/Controle_Financeiro/App/index.html",'url':"./components/Controle_Financeiro.png", 'id':'3', 'code':'"https://github.com/RodigoAlbuquerque/Controle_Financeiro"','cardPos':'card-right'},
 ]
-function criarProjetos(titulo, url, id, code,cardPos){
+function criarProjetos(titulo, live, id, code,cardPos){
     const container = document.querySelector(".portfolio-content")
 
     const card = document.createElement("div")
@@ -28,7 +28,7 @@ function criarProjetos(titulo, url, id, code,cardPos){
         <hr>
         <div class="buttons">
             <a href=${code} target="_blank">Ver Código</a>
-            <a href="${url}">Ao Vivo</a>
+            <a href="${live}">Ao Vivo</a>
         </div>
     `
   
@@ -37,7 +37,7 @@ function criarProjetos(titulo, url, id, code,cardPos){
 
 const loadProjetos = () => {
     projetos.forEach ((item) => {
-        criarProjetos(item.title,item.url,item.id,item.code, item.cardPos)
+        criarProjetos(item.title,item.live,item.id,item.code, item.cardPos)
     })
 }
 
